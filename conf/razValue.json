@@ -1,0 +1,12 @@
+{
+    "topic":"$/+id/raz",
+    "actions": [
+        {
+            "action":"setValue",
+            "id":"quadro",
+            "lambdas": [
+                "value=0"
+            ]
+        }
+    ]
+}

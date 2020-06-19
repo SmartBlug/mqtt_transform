@@ -1,0 +1,12 @@
+{
+    "topic":"$/#",
+    "actions": [
+        {
+            "action":"addTimestamp",
+            "data": {
+                "ts": true,
+                "time": true
+            }
+        }
+    ]
+}

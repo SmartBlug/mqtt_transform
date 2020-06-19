@@ -1,0 +1,21 @@
+{
+    "topic":"$/+id/status",
+    "actions": [
+        {
+            "action":"setValue",
+            "lambdas": [
+                "value=value+1",
+                "data['id']=value"
+            ]
+        },
+        {
+            "enabled":true,
+            "action":"rename",
+            "data": {
+                "v":"voltage",
+                "p":"power",
+                "s":"sensor"
+            }
+        }
+    ]
+}
