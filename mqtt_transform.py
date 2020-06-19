@@ -105,7 +105,7 @@ for file in os.listdir("conf"):
 client = paho.Client()
 #client.on_subscribe = on_subscribe
 client.on_message = on_message
-client.connect("mqtt", 1883)
+client.connect("mqtt",1883)
 client.subscribe("$/#")#, qos=1)
 client.loop_forever()
 
