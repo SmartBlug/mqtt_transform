@@ -45,7 +45,7 @@ def on_message(client, userdata, msg):
   #now = datetime.now() 
   #data['time'] = now.strftime("%m/%d/%Y - %H:%M:%S")    
   #data['ts'] = datetime.timestamp(now)
-  print(">>"+msg.topic[2:]+" "+str(msg.qos)+" "+str(data))
+  #print(">>"+msg.topic[2:]+" "+str(msg.qos)+" "+str(data))
   #print(msg.topic[2:])
   client.publish(msg.topic[2:],json.dumps(data))
 
