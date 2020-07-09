@@ -13,8 +13,7 @@
             "action":"rename",
             "data": {
                 "v":"voltage",
-                "p":"power",
-                "s":"sensor"
+                "b":"battery"
             }
         }
     ]
