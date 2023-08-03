@@ -1,0 +1,24 @@
+# Exemple de .gitlab-ci.yml
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker build -t mqtt_transform .
+
+deploy:
+  stage: deploy
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker tag mqtt_transform $CI_REGISTRY/mon_utilisateur/mqtt_transform:latest
+    - docker push $CI_REGISTRY/mon_utilisateur/mqtt_transform:latest
+    - ssh utilisateur@adresse_synthese "docker pull $CI_REGISTRY/mon_utilisateur/mqtt_transform:latest && docker-compose up -d"
